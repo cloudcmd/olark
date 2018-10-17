@@ -1,0 +1,35 @@
+{
+  "name": "@cloudcmd/olark",
+  "version": "1.0.0",
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+  "description": "extracted code from olark",
+  "homepage": "http://github.com/cloudcmd/olark",
+  "keywords": [
+    "olark"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cloudcmd/olark.git"
+  },
+  "scripts": {
+    "lint": "redrun lint:*",
+    "lint:lib": "eslint index.js",
+    "wisdom": "npm run build",
+    "6to5": "babel index.js -d legacy",
+    "build": "redrun 6to5",
+    "prebuild": "rimraf legacy"
+  },
+  "dependencies": {
+    "load.js": "^2.0.1"
+  },
+  "license": "MIT",
+  "main": "legacy/index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.0.1",
+    "redrun": "^7.0.0",
+    "rimraf": "^2.6.2"
+  }
+}

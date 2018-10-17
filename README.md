@@ -1,18 +1,21 @@
 # Olark
 
-Extracted instalation code for [olark](https://www.olark.com) to install via bower.
+Extracted instalation code for [olark](https://www.olark.com) to install via npm.
 
 ## Install
 
 ```
-bower i olark --save
+npm i @cloudcmd/olark
 ```
 
 ## How to use?
 
-Add `olark.min.js` to your page and initialize olark with site id:
-
 ```js
+const olark = require('@cloudcmd/olark');
 olark.identify('xxxx-xxx-xx-xxxx');
 ```
+
+## License
+
+MIT
 
