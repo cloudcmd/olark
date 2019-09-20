@@ -1,3 +1,11 @@
+2019.09.20, v3.0.0
+
+feature:
+- (olark) drop legacy support
+- (package) load.js v3.0.2
+- (package) eslint v6.4.0
+
+
 2018.10.17, v2.0.1
 
 fix:
