@@ -5,12 +5,12 @@ const loadJS = require('load.js').js;
 
 module.exports = window.olark || loadOlark();
 
-function loadOlark() {
+async function loadOlark(...args) {
     const url = 'static.olark.com/jsclient/loader.js';
-    loadJS(`//${url}`, noop);
+    await loadJS(`//${url}`);
   
     const item = window.olark = function() {
-        k.s.push(arguments);
+        k.s.push(args);
         k.t.push(+new Date);
     };
     

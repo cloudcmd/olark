@@ -19,7 +19,7 @@
     "load.js": "^3.0.2"
   },
   "license": "MIT",
-  "main": "legacy/index.js",
+  "main": "index.js",
   "devDependencies": {
     "eslint": "^6.4.0",
     "eslint-plugin-node": "^10.0.0",
