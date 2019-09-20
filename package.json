@@ -12,12 +12,8 @@
     "url": "git://github.com/cloudcmd/olark.git"
   },
   "scripts": {
-    "lint": "redrun lint:*",
-    "lint:lib": "eslint index.js",
-    "wisdom": "npm run build",
-    "6to5": "babel index.js -d legacy",
-    "build": "redrun 6to5",
-    "prebuild": "rimraf legacy"
+    "lint": "madrun lint",
+    "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
     "load.js": "^2.0.1"
@@ -25,11 +21,12 @@
   "license": "MIT",
   "main": "legacy/index.js",
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "eslint": "^5.0.1",
-    "redrun": "^7.0.0",
-    "rimraf": "^2.6.2"
+    "eslint": "^6.4.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-putout": "^2.0.0",
+    "madrun": "^3.0.5",
+    "putout": "^6.1.0",
+    "rimraf": "^2.6.2",
+    "supertape": "^1.2.3"
   }
 }
