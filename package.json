@@ -27,5 +27,8 @@
     "madrun": "^3.0.5",
     "putout": "^6.1.0",
     "supertape": "^1.2.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
