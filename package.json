@@ -16,7 +16,7 @@
     "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
-    "load.js": "^2.0.1"
+    "load.js": "^3.0.2"
   },
   "license": "MIT",
   "main": "legacy/index.js",
@@ -26,7 +26,6 @@
     "eslint-plugin-putout": "^2.0.0",
     "madrun": "^3.0.5",
     "putout": "^6.1.0",
-    "rimraf": "^2.6.2",
     "supertape": "^1.2.3"
   }
 }
