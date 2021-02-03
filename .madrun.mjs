@@ -1,11 +1,9 @@
-'use strict';
+import {run} from 'madrun';
 
-const {
-    run
-} = require('madrun');
-
-module.exports = {
-    "lint": () => 'putout index.js madrun.js',
-    'fix:lint': () => run('lint', '--fix')
+export default {
+    'lint': () => 'putout .',
+    'fresh:lint': () => run('lint', '--fresh'),
+    'lint:fresh': () => run('lint', '--fresh'),
+    'fix:lint': () => run('lint', '--fix'),
 };
 
