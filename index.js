@@ -2,8 +2,8 @@
 
 const loadJS = require('load.js').js;
 
-module.exports = window.olark || loadOlark();
 const getDate = () => Number(new Date());
+module.exports = window.olark || loadOlark();
 
 function loadOlark(...args) {
     const url = 'static.olark.com/jsclient/loader.js';
