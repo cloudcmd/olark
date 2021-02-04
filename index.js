@@ -1,45 +1,49 @@
 'use strict';
 
-const loadJS = require('load.js').js;
+const identityLoginURL = 'static.olark.com/jsclient/loader.js';
 
-const getDate = () => Number(new Date());
-module.exports = window.olark || loadOlark();
-
-function loadOlark(...args) {
-    const url = 'static.olark.com/jsclient/loader.js';
-    loadJS(`//${url}`);
+if (!window.olark) {
+    const el = document.createElement('script');
+    const [script] = document.getElementsByTagName('script');
+    el.async = 1;
+    el.src = '//' + identityLoginURL;
+    script.parentNode.insertBefore(el, script);
     
-    const datesList = [getDate()];
-    const argsList = [];
-    const config = [];
-    
-    const storage = {
-        s: argsList,
-        t: datesList,
-        c: config,
-        l: url,
+    const olark = window.olark = (...args) => {
+        k.s.push(args);
+        k.t.push(Number(new Date));
     };
-    
-    const item = window.olark = () => {
-        argsList.push(args);
-        datesList.push(getDate());
+    /**
+    * @param {?} i
+    * @param {?} src
+    * @return {undefined}
+    */
+    olark.extend = (i, src) => {
+        olark('extend', i, src);
     };
-    
-    item.extend = (i, src) => {
-        item('extend', i, src);
+    /**
+    * @param {string} o
+    * @return {undefined}
+    */
+    olark.identify = (o) => {
+        olark('identify', k.i = o);
     };
-    
-    item.identify = (o) => {
-        item('identify', storage.i = o);
+    /**
+    * @param {?} key
+    * @param {?} callback
+    * @return {undefined}
+    */
+    olark.configure = (key, callback) => {
+        olark('configure', key, callback);
+        k.c[key] = callback;
     };
-    
-    item.configure = (key, callback) => {
-        item('configure', key, callback);
-        config[key] = callback;
+    const k = olark._ = {
+        s: [],
+        t: [Number(new Date)],
+        c: {},
+        l: identityLoginURL,
     };
-    
-    item._ = storage;
-    
-    return item;
 }
+
+module.exports = window.olark;
 

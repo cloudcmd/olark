@@ -16,7 +16,6 @@
     "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
-    "load.js": "^3.0.2"
   },
   "license": "MIT",
   "main": "index.js",
