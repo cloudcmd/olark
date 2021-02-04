@@ -1,6 +1,6 @@
 {
   "name": "@cloudcmd/olark",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "extracted code from olark",
   "homepage": "http://github.com/cloudcmd/olark",
@@ -15,8 +15,7 @@
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "license": "MIT",
   "main": "index.js",
   "devDependencies": {
